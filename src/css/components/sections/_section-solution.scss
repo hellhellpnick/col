@@ -1,0 +1,22 @@
+.section-solution {
+  @extend %section;
+  background-color: $background-light-color;
+}
+
+.section-solution__subtitle {
+  @include text-constructor($font-size-medium, $font-weigth-second, $text-main-color, $font-family-primary);
+}
+
+
+.section-solution__title--pink {
+  color: $text-primary-color
+}
+
+.section-solution__title {
+  @include text-constructor($font-size-ultraMedium, $font-weigth-bold, $text-dark-color, $font-family-main);
+  line-height: 157%;
+
+  @include tablet-media {
+    margin-bottom: 53px;
+  }
+}

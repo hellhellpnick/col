@@ -1,0 +1,107 @@
+.card-solution {
+  @include flex-constructor(flex-start, flex-start, column);
+  max-width: 935px;
+  width: 100%;
+
+
+  &:nth-child(2n) {
+    .card-solution__wrapper-image:after {
+      left: -10px;
+    }
+
+    .card-solution__block {
+
+      left: -1px;
+    }
+  }
+}
+
+.card-solution__content {
+  @include flex-constructor(flex-start, flex-start, column);
+  max-width: 420px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @include desktop-media {
+    margin-bottom: 0;
+  }
+}
+
+.card-solution__title {
+  @include text-constructor($font-size-ultraLarge, $font-weigth-main, $text-primary-color, $font-family-main);
+  margin-bottom: 5px;
+  line-height: 150%;
+}
+
+.card-solution__text {
+  @include text-constructor($font-size-medium, $font-weigth-primary, $text-main-color, $font-family-primary);
+  line-height: 150%;
+}
+
+.card-solution__block {
+  position: absolute;
+  @include flex-constructor(space-between, center, column);
+  background-color: $background-dark-color;
+  padding: 20px;
+  top: -1px;
+  right: -1px;
+  max-width: 460px;
+  width: 40%;
+  max-height: 738px;
+  height: 57%;
+}
+
+.card-solution__block-text {
+  @include text-constructor($font-size-medium, $font-weigth-bold, $text-light-color, $font-family-primary);
+  font-style: italic;
+  line-height: 150%;
+}
+
+.card-solution__block-icon {
+  @include text-constructor($font-size-large, $font-weigth-bold, $icon-main-color, $font-family-primary);
+
+  @include desktop-media {
+    line-height: 216px;
+  }
+}
+
+.card-solution__wrapper-image {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  @include image-padding-hack(1%, cover);
+  max-height: 740px;
+  height: 100%;
+  z-index: 2;
+
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    position: absolute;
+    background-color: $background-dark-color;
+    top: -15px;
+    right: -10px;
+    width: 100%;
+    max-width: 50%;
+    max-height: 540px;
+    height: 60%;
+    z-index: -1;
+  }
+
+  @include iphone-plus-media {
+    &::after {
+      right: -5%;
+      max-width: 50%;
+    }
+  }
+
+  @include desktop-media {
+    &::after {
+      top: -36px;
+      right: -90%;
+      max-width: 100%;
+    }
+  }
+}

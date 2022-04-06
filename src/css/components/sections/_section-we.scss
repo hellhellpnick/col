@@ -78,15 +78,8 @@
 
   @include iphone-media {
     &:after {
-      bottom: 20px;
+      bottom: 30px;
       height: 340px;
-    }
-  }
-
-  @include iphone-media {
-    &:after {
-      bottom: 20px;
-      height: 380px;
     }
   }
 
