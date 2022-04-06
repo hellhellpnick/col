@@ -26,3 +26,41 @@
   width: 100%;
   margin: auto;
 }
+
+.section-header__nav--fixed {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $background-light-color;
+    padding: 10px;
+    z-index: 10;
+
+    @include tablet-media {
+      padding: 22px 20px;
+    }
+  }
+
+  .main-nav__item-link {
+    color: $text-dark-color;
+  }
+
+
+  .main-nav__item--active {
+    .main-nav__item-link {
+      &::after {
+        background-color: $background-main-color;
+      }
+    }
+  }
+
+  .section-header__nav-image {
+
+    filter: brightness(0%)
+  }
+
+  .burger__item {
+    background-color: $background-dark-color;
+  }
+}

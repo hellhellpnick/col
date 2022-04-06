@@ -1,0 +1,24 @@
+.section-footer {
+  padding: 20px 10px;
+  background-color: $background-dark-color;
+
+  @include tablet-media {
+    padding: 37px 10px;
+  }
+}
+
+.section-footer__box {
+  @include flex-constructor(space-between, center, column);
+  max-width: $max-width-container;
+  width: 100%;
+  margin: 0 auto;
+
+  @include tablet-media {
+    flex-direction: row;
+  }
+}
+
+.section-footer__box-text {
+  @include text-constructor($font-size-ultraSmall, $font-weigth-second, $text-light-color, $font-family-primary);
+  line-height: 14.4px;
+}

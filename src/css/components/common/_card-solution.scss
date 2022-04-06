@@ -1,21 +1,3 @@
-.card-solution {
-  @include flex-constructor(flex-start, flex-start, column);
-  max-width: 935px;
-  width: 100%;
-
-
-  &:nth-child(2n) {
-    .card-solution__wrapper-image:after {
-      left: -10px;
-    }
-
-    .card-solution__block {
-
-      left: -1px;
-    }
-  }
-}
-
 .card-solution__content {
   @include flex-constructor(flex-start, flex-start, column);
   max-width: 420px;
@@ -24,6 +6,7 @@
 
   @include desktop-media {
     margin-bottom: 0;
+    margin-right: 50px
   }
 }
 
@@ -31,42 +14,79 @@
   @include text-constructor($font-size-ultraLarge, $font-weigth-main, $text-primary-color, $font-family-main);
   margin-bottom: 5px;
   line-height: 150%;
+
+  @include desktop-media {
+    font-size: 150px;
+  }
 }
 
 .card-solution__text {
   @include text-constructor($font-size-medium, $font-weigth-primary, $text-main-color, $font-family-primary);
   line-height: 150%;
+
+  @include desktop-media {
+    font-size: $font-size-ultraMedium;
+  }
+}
+
+.card-solution__wrapper-info {
+  position: relative;
 }
 
 .card-solution__block {
   position: absolute;
-  @include flex-constructor(space-between, center, column);
+  @include flex-constructor(center, center, column);
   background-color: $background-dark-color;
   padding: 20px;
   top: -1px;
   right: -1px;
-  max-width: 460px;
-  width: 40%;
-  max-height: 738px;
+  width: 100%;
+  max-width: 43%;
+  max-height: 540px;
   height: 57%;
+
+  @include desktop-media {
+    right: -45%;
+    padding: 20px 40px;
+    height: 69%;
+    max-width: 70%;
+  }
 }
 
 .card-solution__block-text {
   @include text-constructor($font-size-medium, $font-weigth-bold, $text-light-color, $font-family-primary);
   font-style: italic;
   line-height: 150%;
+  text-align: center;
+
+  @include desktop-media {
+    font-size: $font-size-ultraBig;
+  }
 }
 
 .card-solution__block-icon {
-  @include text-constructor($font-size-large, $font-weigth-bold, $icon-main-color, $font-family-primary);
+  position: absolute;
+  @include text-constructor($font-size-large, $font-weigth-bold, $icon-main-color, $font-family-second);
+  text-align: center;
+  opacity: 0.25;
+
+  &:first-child {
+    top: 17px;
+  }
+
+  &:last-child {
+    bottom: -27px;
+  }
 
   @include desktop-media {
-    line-height: 216px;
+    line-height: 150px;
+    font-size: 144px;
   }
 }
 
 .card-solution__wrapper-image {
   position: relative;
+  padding: 20px;
   max-width: 460px;
   width: 100%;
   @include image-padding-hack(1%, cover);
@@ -85,7 +105,7 @@
     right: -10px;
     width: 100%;
     max-width: 50%;
-    max-height: 540px;
+    max-height: 550px;
     height: 60%;
     z-index: -1;
   }
@@ -100,8 +120,58 @@
   @include desktop-media {
     &::after {
       top: -36px;
-      right: -90%;
-      max-width: 100%;
+      width: 810px;
+      right: -86%;
+      max-width: 131%;
+      height: 80%;
+    }
+  }
+}
+
+.card-solution {
+  @include flex-constructor(flex-start, flex-start, column);
+  max-width: 935px;
+  width: 100%;
+
+  &:nth-child(2n) {
+    .card-solution__wrapper-image:after {
+      left: -10px;
+      width: 100%;
+    }
+
+    .card-solution__block {
+      left: -1px;
+    }
+  }
+
+
+  @include desktop-media {
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 0;
+
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      .card-solution__wrapper-image {
+        &::after {
+          width: 810px;
+          left: -140%;
+          height: 80%;
+        }
+      }
+
+      .card-solution__block {
+        left: -45%;
+        padding: 20px 40px;
+        height: 75%;
+        max-width: 70%;
+      }
+
+      .card-solution__wrapper-info {
+        margin-right: 50px;
+      }
     }
   }
 }

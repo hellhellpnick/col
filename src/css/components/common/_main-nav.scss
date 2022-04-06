@@ -66,6 +66,7 @@
 
 .main-nav__item-link {
   position: relative;
+  cursor: pointer;
   @include text-constructor($font-size-ultraMedium, $font-weigth-primary, $text-dark-color, $font-family-primary);
   padding: 20px;
   width: 100%;

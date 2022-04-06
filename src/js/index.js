@@ -10,25 +10,72 @@ const wrapperLogo = document.querySelector(
 const itemsMainNav = document.querySelectorAll(
   ".main-nav__item",
 );
+const itemsFooterNav = document.querySelectorAll(
+  ".footer-nav__item",
+);
 
-itemsMainNav.forEach((item) =>
-  item.addEventListener("click", () => {
-    if (
-      !item.classList.contains(
-        ".main-nav__item--active",
-      )
-    ) {
-      itemsMainNav.forEach((element) =>
-        element.classList.remove(
-          "main-nav__item--active",
-        ),
-      );
+const nav = document.querySelector(
+  ".section-header__nav",
+);
 
-      item.classList.add(
-        "main-nav__item--active",
-      );
-    }
-  }),
+const onClickItemMenu = (
+  arrChild,
+  classChild,
+  otherArrChild,
+  otherClassChild,
+) => {
+  arrChild.forEach((item, index) =>
+    item.addEventListener("click", () => {
+      if (!item.classList.contains(classChild)) {
+        arrChild.forEach((element) =>
+          element.classList.remove(classChild),
+        );
+        otherArrChild.forEach((element) =>
+          element.classList.remove(
+            otherClassChild,
+          ),
+        );
+
+        burgerBtn.classList.remove(
+          "burger--open",
+        );
+        mainNav.classList.remove(
+          "main-nav--open",
+        );
+        body.style.overflow = "auto";
+        otherArrChild[index].classList.add(
+          otherClassChild,
+        );
+        item.classList.add(classChild);
+      } else {
+        burgerBtn.classList.remove(
+          "burger--open",
+        );
+        mainNav.classList.remove(
+          "main-nav--open",
+        );
+        body.style.overflow = "auto";
+        otherArrChild[index].classList.add(
+          otherClassChild,
+        );
+        item.classList.add(classChild);
+      }
+    }),
+  );
+};
+
+onClickItemMenu(
+  itemsMainNav,
+  "main-nav__item--active",
+  itemsFooterNav,
+  "footer-nav__item--active",
+);
+
+onClickItemMenu(
+  itemsFooterNav,
+  "footer-nav__item--active",
+  itemsMainNav,
+  "main-nav__item--active",
 );
 
 window.addEventListener("resize", () => {
@@ -37,6 +84,20 @@ window.addEventListener("resize", () => {
     mainNav.classList.remove("main-nav--open");
     wrapperLogo.classList.remove(
       "section-header__nav-box--fixed",
+    );
+  }
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    nav.classList.add(
+      "section-header__nav--fixed",
+    );
+    nav.style.offsetHeight =
+      nav.childNodes[0].nextElementSibling.offsetHeight;
+  } else {
+    nav.classList.remove(
+      "section-header__nav--fixed",
     );
   }
 });
