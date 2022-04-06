@@ -24,7 +24,6 @@
   padding-bottom: $padding;
 
   img {
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -47,6 +46,17 @@
   fill: $fill;
 }
 
+@mixin iphone-media {
+  @media (min-width: $screen-iphone) {
+    @content;
+  }
+}
+
+@mixin iphone-plus-media {
+  @media (min-width: $screen-iphone-plus) {
+    @content;
+  }
+}
 
 @mixin tablet-media {
   @media (min-width: $screen-tablet) {
