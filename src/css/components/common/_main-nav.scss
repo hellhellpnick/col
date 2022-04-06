@@ -56,6 +56,10 @@
       border-radius: 8px;
       transition: all 0.2s ease;
       animation: visible-line-link 1s linear;
+
+      @include desktop-media {
+        background-color: $background-light-color;
+      }
     }
   }
 }

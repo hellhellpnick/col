@@ -71,6 +71,11 @@ burgerBtn.addEventListener("click", () => {
 $(".section-header__slider").slick({
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: false,
+  prevArrow: $(
+    ".card-slider__button-arrow--left",
+  ),
+  nextArrow: $(
+    ".card-slider__button-arrow--right",
+  ),
   dots: true,
 });

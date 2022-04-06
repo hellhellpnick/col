@@ -47,14 +47,21 @@
   fill: $fill;
 }
 
+
+@mixin tablet-media {
+  @media (min-width: $screen-tablet) {
+    @content;
+  }
+}
+
 @mixin desktop-media {
   @media (min-width: $screen-desktop) {
     @content;
   }
 }
 
-@mixin tablet-media {
-  @media (min-width: $screen-tablet) {
+@mixin desktop-large-media {
+  @media (min-width: $screen-desktop-large) {
     @content;
   }
 }
