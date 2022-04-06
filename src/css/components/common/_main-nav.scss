@@ -1,0 +1,117 @@
+.main-nav {
+  @include flex-constructor(space-around, center, column);
+  display: none;
+  width: auto;
+  transition: all 0.2s ease;
+
+  @include desktop-media {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.main-nav--open {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $background-light-color;
+  animation: visible-menu 1s linear;
+  z-index: 10;
+
+  &>.main-nav__item-link {
+    color: $text-dark-color;
+
+    &::after {
+      background-color: $background-dark-color;
+    }
+  }
+}
+
+.main-nav__item {
+  width: 100%;
+  @include flex-constructor(center, center);
+
+  @include desktop-media {
+    width: auto;
+    display: block
+  }
+}
+
+.main-nav__item--active {
+  .main-nav__item-link {
+    &::after {
+      display: inline-block;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      bottom: 0;
+      @include box-size(70px, 3px);
+      background-color: $background-main-color;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      animation: visible-line-link 1s linear;
+    }
+  }
+}
+
+.main-nav__item-link {
+  position: relative;
+  @include text-constructor($font-size-ultraMedium, $font-weigth-primary, $text-dark-color, $font-family-primary);
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+
+  @include desktop-media {
+    width: auto;
+    color: $text-light-color;
+
+    &:hover {
+      color: $text-primary-color;
+    }
+
+    &:active {
+      &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 0;
+        @include box-size(70px, 3px);
+        background-color: $background-main-color;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+
+@keyframes visible-menu {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100vh;
+  }
+}
+
+@keyframes visible-line-link {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 70px;
+  }
+}

@@ -1,0 +1,38 @@
+.burger {
+  @extend %button;
+  @include flex-constructor(space-around, center, column);
+  padding: 2px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: $box-radius-main;
+  border: 2px solid $border-main-color;
+  z-index: 10;
+
+  @include desktop-media {
+    display: none;
+  }
+}
+
+.burger--open {
+  .burger__item:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 9px);
+    background-color: $background-dark-color;
+  }
+
+  .burger__item:nth-child(2) {
+    width: 0
+  }
+
+  .burger__item:nth-child(3) {
+    transform: rotate(132deg) translate(-7px, 7px);
+    background-color: $background-dark-color;
+  }
+}
+
+.burger__item {
+  @include box-size(90%, 4px);
+  background-color: $background-light-color;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Noticia+Text:ital,wght@1,700&display=swap');
+
+// Core
+@import './core/vars';
+@import './core/mixins';
+@import './core/inheritance';
+@import './core/common';
+
+// Components Sections
+@import './components/sections/sections-header';
+
+// Components Common
+@import './components/common/burger';
+@import './components/common/main-nav';
+@import './components/common/card-slider';

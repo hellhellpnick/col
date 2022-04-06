@@ -1,0 +1,97 @@
+.card-slider {
+  @include flex-constructor(flex-start, flex-start, column);
+}
+
+.card-slider__title {
+  @include text-constructor($font-size-ultraBig, $font-weigth-bold, $text-light-color);
+  line-height: 118.8%;
+  margin-bottom: 50px;
+}
+
+.card-slider__title--pink {
+  color: $text-primary-color;
+}
+
+.card-slider__text {
+  @include text-constructor($font-size-medium, $font-weigth-main, $text-light-color, $font-family-primary);
+  line-height: 31px;
+  max-width: 420px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.card-slider__button {
+  @extend %button;
+  @include text-constructor($font-size-ultraMedium, $font-weigth-main, $text-light-color, $font-family-primary);
+  background-color: $background-main-color;
+  line-height: 25px;
+  padding: 20px 50px;
+}
+
+.slick-dotted.slick-slider {
+  margin: auto;
+}
+
+.slick-dots button {
+  transition: all 0.2s ease;
+}
+
+.slick-list {
+  position: static;
+}
+
+.slick-track {
+  position: static;
+}
+
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 10px;
+  margin: 0 auto;
+  max-width: 200px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet-media {
+    bottom: 70px;
+  }
+}
+
+.slick-dots li {
+  transition: all 0.2s ease;
+
+  @include desktop-media {
+    &:hover {
+      button:before {
+        background-color: $background-primary-color;
+      }
+    }
+  }
+}
+
+.slick-dots li button:before {
+  content: '';
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background-color: $background-light-color;
+  text-align: center;
+  opacity: 1;
+  color: $icon-main-color;
+  border-radius: $box-radius-half;
+  transition: all 0.2 ease;
+
+}
+
+.slick-dots .slick-active button::before {
+  background-color: $background-main-color;
+}

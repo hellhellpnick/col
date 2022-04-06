@@ -1,0 +1,28 @@
+.section-header {
+  @extend %section;
+  background-image: url('/images/background-slider.png');
+}
+
+.section-header__nav-wrapper {
+  @include flex-constructor(space-between, center, row);
+}
+
+.section-header__nav-box {
+  z-index: 11;
+}
+
+.section-header__nav-box--fixed {
+
+  .section-header__nav-image {
+
+    filter: brightness(0%)
+  }
+}
+
+.section-header__slider {
+  position: static;
+  @include flex-constructor(flex-start, center, row);
+  max-width: $max-width-slider;
+  width: 100%;
+  margin: auto;
+}
