@@ -175,3 +175,9 @@
     }
   }
 }
+
+.card-solution__wrapper-info--margin {
+  @include desktop-media {
+    margin-right: 75px;
+  }
+}

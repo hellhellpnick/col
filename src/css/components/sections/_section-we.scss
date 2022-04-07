@@ -12,6 +12,7 @@
 }
 
 .section-we__wrapper {
+
   @include desktop-media {
     @include flex-constructor(space-between, center, row);
   }
@@ -23,7 +24,7 @@
   width: 100%;
   margin-bottom: 30px;
 
-  @include tablet-media {
+  @include desktop-media {
     margin-bottom: 0;
   }
 }
@@ -51,58 +52,31 @@
 
 .section-we__wrapper-img {
   position: relative;
-  max-width: 550px;
-  width: 100%;
   @include image-padding-hack(1%, cover);
-  max-height: 510px;
+  max-width: 544px;
+  width: 100%;
+  max-height: 516px;
   height: 100%;
-
-  &>img {
-    position: relative;
-    z-index: 2;
-
-  }
+  z-index: 2;
 
   &:after {
     content: '';
-    display: inline-block;
+    display: block;
+    clear: both;
     position: absolute;
     background-color: $background-main-color;
-    bottom: 90%;
+    top: -10px;
     right: -10px;
     width: 100%;
     max-width: 50%;
-    height: 280px;
-    z-index: 1;
-  }
-
-  @include iphone-media {
-    &:after {
-      bottom: 30px;
-      height: 340px;
-    }
-  }
-
-  @include tablet-media {
-    &:after {
-      right: -30px;
-      bottom: 15px;
-      height: 550px;
-    }
+    height: 100%;
+    z-index: -1;
   }
 
   @include desktop-media {
-    &:after {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      background-color: $background-main-color;
-      bottom: 50px;
+    &::after {
+      top: -50px;
       right: -50px;
-      width: 100%;
-      max-width: 50%;
-      height: 516px;
-      z-index: 1;
     }
   }
 }

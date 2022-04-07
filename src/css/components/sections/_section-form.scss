@@ -1,0 +1,83 @@
+.section-form {
+  @extend %section;
+  padding: 50px 10px;
+  background-color: $background-light-color;
+
+  @include tablet-media {
+    padding: 70px 10px;
+  }
+
+  @include desktop-media {
+    padding: 170px 20px 120px 20px;
+  }
+}
+
+.section-form__wrapper {
+  @include flex-constructor(flex-start, flex-start, column);
+  max-width: 460px;
+  width: 100%;
+}
+
+.section-form__wrapper-subtitle {
+  @include text-constructor($font-size-medium, $font-weigth-second, $text-main-color, $font-family-primary);
+  line-height: 157%;
+
+  @include tablet-media {
+    font-size: $font-size-big;
+  }
+}
+
+.section-form__wrapper-title {
+  @include text-constructor($font-size-ultraBig, $font-weigth-bold, $text-dark-color, $font-family-main);
+  margin-bottom: 30px;
+  line-height: 157%;
+
+  @include tablet-media {
+    font-size: $font-size-large;
+  }
+}
+
+.section-form__wrapper-title--pink {
+  color: $text-primary-color;
+}
+
+.section-form__wrapper-image {
+  position: relative;
+  @include image-padding-hack(1%, cover);
+  max-width: 600px;
+  width: 100%;
+  max-height: 866px;
+  height: 100%;
+  z-index: 2;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    position: absolute;
+    background-color: $background-main-color;
+    top: -20px;
+    left: -50px;
+    width: 100%;
+    max-width: 50%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  @include tablet-media {
+    &::after {
+      top: -50px;
+    }
+  }
+}
+
+.section-form__wrapper-center {
+  @extend %container;
+  @include flex-constructor(flex-start, center, column);
+
+  @include desktop-media {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
