@@ -45,28 +45,28 @@ const loadGoogleMap = () => {
       position: positionMarkers[0],
       map: map,
       title: "Ти навів на мене!",
-      icon: `/images/icons/icon-map-address-hover.png`,
+      icon: `images/icons/icon-map-address-hover.png`,
     });
 
     const marker2 = new google.maps.Marker({
       position: positionMarkers[1],
       map: map,
       title: "Ти навів на мене!",
-      icon: `/images/icons/icon-map-address.png`,
+      icon: `images/icons/icon-map-address.png`,
     });
 
     const marker3 = new google.maps.Marker({
       position: positionMarkers[2],
       map: map,
       title: "Ти навів на мене!",
-      icon: `/images/icons/icon-map-address.png`,
+      icon: `images/icons/icon-map-address.png`,
     });
 
     const marker4 = new google.maps.Marker({
       position: positionMarkers[3],
       map: map,
       title: "Ти навів на мене!",
-      icon: `/images/icons/icon-map-address.png`,
+      icon: `images/icons/icon-map-address.png`,
     });
 
     const markersList = [
@@ -82,7 +82,7 @@ const loadGoogleMap = () => {
         () => {
           markersList.forEach((elem) => {
             elem.setIcon(
-              `/images/icons/icon-map-address.png`,
+              `images/icons/icon-map-address.png`,
             );
           });
           listCard.forEach((elem) =>
@@ -103,7 +103,7 @@ const loadGoogleMap = () => {
             "address-card__item--active",
           );
           item.setIcon(
-            `/images/icons/icon-map-address-hover.png`,
+            `images/icons/icon-map-address-hover.png`,
           );
         },
       );
@@ -123,7 +123,7 @@ const loadGoogleMap = () => {
         );
         markersList.forEach((elem) => {
           elem.setIcon(
-            `/images/icons/icon-map-address.png`,
+            `images/icons/icon-map-address.png`,
           );
         });
 
@@ -134,7 +134,7 @@ const loadGoogleMap = () => {
           "address-card__item--active",
         );
         markersList[index].setIcon(
-          `/images/icons/icon-map-address-hover.png`,
+          `images/icons/icon-map-address-hover.png`,
         );
       });
     });
