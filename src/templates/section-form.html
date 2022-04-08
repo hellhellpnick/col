@@ -28,7 +28,8 @@
           <div class="form-contect__box-input">
             <label for="phone" class="form-contact__wrapper-label">Телефон
             </label>
-            <input type="tel" class="form-contact__wrapper-input" id="phone" placeholder="+38 (000) _ _ _-_ _-_ _">
+            <input type="tel" class="form-contact__wrapper-input" id="phone" maxlength="13"
+              pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}" placeholder="+38 (000) _ _ _-_ _-_ _">
             <img src="/images/icons/icon-error-cross.png" alt="error" class="form-contact__wrapper-accept">
             <img src="/images/icons/icon-success.png" alt="success" class="form-contact__wrapper-accept">
           </div>
