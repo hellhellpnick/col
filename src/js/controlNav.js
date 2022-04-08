@@ -1,15 +1,12 @@
-const wrapperLogo = document.querySelector(
-  ".section-header__nav-box",
-);
-const burgerBtn =
-  document.querySelector(".burger");
-const mainNav =
-  document.querySelector(".main-nav");
-const body =
-  document.getElementsByTagName("body")[0];
-const nav = document.querySelector(
-  ".section-header__nav",
-);
+import {
+  wrapperLogo,
+  burgerBtn,
+  mainNav,
+  body,
+  nav,
+  itemsMainNav,
+  itemsFooterNav,
+} from "./constants";
 
 const onClickItemMenu = (
   arrChild,
@@ -89,13 +86,61 @@ const controlBurgerMenu = () => {
   }
 };
 
+const changeItemsMenu = (arrBox, scroll) => {
+  arrBox.forEach((item, index) => {
+    if (
+      item.getBoundingClientRect().top + scroll <
+        scroll + 100 &&
+      item.getBoundingClientRect().bottom >= 200
+    ) {
+      itemsMainNav.forEach((elem) => {
+        elem.classList.remove(
+          "main-nav__item--active",
+        );
+      });
+      itemsFooterNav.forEach((elem) => {
+        elem.classList.remove(
+          "footer-nav__item--active",
+        );
+      });
+
+      itemsMainNav[index].classList.add(
+        "main-nav__item--active",
+      );
+      itemsFooterNav[index].classList.add(
+        "footer-nav__item--active",
+      );
+    } else if (scroll < 400) {
+      itemsMainNav.forEach((elem) => {
+        elem.classList.remove(
+          "main-nav__item--active",
+        );
+      });
+      itemsFooterNav.forEach((elem) => {
+        elem.classList.remove(
+          "footer-nav__item--active",
+        );
+      });
+    }
+  });
+};
+
 const fixedPositionMenu = () => {
+  const arrSections = [
+    document.getElementById("solution"),
+    document.getElementById("we"),
+    document.getElementById("form"),
+    document.getElementById("contact"),
+  ];
+
   if (window.scrollY > 100) {
     nav.classList.add(
       "section-header__nav--fixed",
     );
     nav.style.offsetHeight =
       nav.childNodes[0].nextElementSibling.offsetHeight;
+
+    changeItemsMenu(arrSections, window.scrollY);
   } else {
     nav.classList.remove(
       "section-header__nav--fixed",

@@ -1,0 +1,41 @@
+.address-card {
+  @include flex-constructor(space-between, flex-start, row, wrap);
+  width: 100%;
+}
+
+.address-card__item {
+  cursor: pointer;
+  @include flex-constructor(flex-start, center, row);
+  max-width: 350px;
+  padding: 30px 18px;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  margin-bottom: 15px;
+
+  @include desktop-media {
+    margin-bottom: 15px;
+
+    &:hover {
+      background-color: $background-primary-color;
+    }
+
+    &:active {
+      background-color: $background-second-color;
+    }
+  }
+}
+
+.address-card__item--active {
+  background-color: $background-main-color;
+}
+
+.address-card__item-text {
+  @include text-constructor($font-size-medium, $font-weigth-bold, $text-light-color, $font-family-main);
+  line-height: 157%;
+}
+
+.address-card__item-icon {
+  @include svg-constructor(14px, 18px, $icon-light-color);
+  margin-right: 30px;
+}

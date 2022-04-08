@@ -1,0 +1,18 @@
+.map-google__icon {
+  @include svg-constructor(26px, 36px, $icon-dark-color);
+}
+
+.gm-ui-hover-effect {
+  display: none !important;
+}
+
+.gm-style .gm-style-iw-c {
+  padding: 25px !important;
+  max-width: 326px !important;
+  width: 100%;
+
+}
+
+.gm-style .gm-style-iw-t::after {
+  display: none;
+}

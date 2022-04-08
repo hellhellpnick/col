@@ -1,0 +1,22 @@
+.info-list {
+  @include flex-constructor(flex-start, flex-start, column);
+}
+
+.info-list__item {
+  @include flex-constructor(flex-start, center, row, nowrap);
+  margin-bottom: 15px;
+
+  @include desktop-media {
+    margin-bottom: 25px;
+  }
+
+  &:last-child {
+    margin-bottom: 5px;
+  }
+}
+
+.info-list__item-text {
+  @include text-constructor($font-size-small, $font-weigth-second, $text-second-color, $font-family-primary);
+  line-height: 24px;
+  margin-left: 10px;
+}

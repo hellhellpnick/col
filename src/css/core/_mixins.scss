@@ -40,9 +40,9 @@
   height: $height;
 }
 
-@mixin svg-constructor($size: 32px, $fill: black) {
-  width: $size;
-  height: $size;
+@mixin svg-constructor($width: 32px, $height: 32px, $fill: black) {
+  width: $width;
+  height: $height;
   fill: $fill;
 }
 

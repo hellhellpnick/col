@@ -43,6 +43,8 @@
   }
 
   @include desktop-media {
+    font-size: $font-size-medium;
+
     &:hover {
       color: $text-primary-color;
     }

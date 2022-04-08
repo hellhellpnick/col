@@ -1,26 +1,23 @@
+import { loadGoogleMap } from "./googleMap";
 import {
   onClickItemMenu,
   controlBurgerMenu,
   fixedPositionMenu,
   controlResizeWindow,
 } from "./controlNav";
-import { checkRadio } from "./actionForm";
+import {
+  checkRadio,
+  submitForm,
+  listenerInput,
+} from "./actionForm";
 import { formSelect } from "./selectForm";
 import { sickSlider } from "./sickSlider";
-const burgerBtn =
-  document.querySelector(".burger");
-const itemsMainNav = document.querySelectorAll(
-  ".main-nav__item",
-);
-const itemsFooterNav = document.querySelectorAll(
-  ".footer-nav__item",
-);
-
-const radioList = [
-  document.querySelector("#radio1"),
-  document.querySelector("#radio2"),
-  document.querySelector("#radio3"),
-];
+import {
+  burgerBtn,
+  itemsMainNav,
+  itemsFooterNav,
+  radioList,
+} from "./constants";
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -61,5 +58,9 @@ document.addEventListener(
       itemsMainNav,
       "main-nav__item--active",
     );
+
+    loadGoogleMap();
+    submitForm();
+    listenerInput();
   },
 );

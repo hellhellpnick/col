@@ -1,4 +1,4 @@
-<section class="section-form">
+<section class="section-form" id="form">
   <div class="section-form__wrapper-center">
     <div class="card-solution__wrapper-info card-solution__wrapper-info--margin">
       <div class="section-form__wrapper-image">
@@ -16,11 +16,11 @@
             <label for="name" class="form-contact__wrapper-label">Ім’я*
             </label>
             <input type="text" class="form-contact__wrapper-input" id="name" required minlength="3">
-            <img src="/images/error-cross.png" alt="error" class="form-contact__wrapper-accept">
-            <img src="/images/success.png" alt="success" class="form-contact__wrapper-accept">
+            <img src="/images/icons/icon-error-cross.png" alt="error" class="form-contact__wrapper-accept">
+            <img src="/images/icons/icon-success.png" alt="success" class="form-contact__wrapper-accept">
           </div>
           <span class="form-contact__wrapper-content">
-            <img src="/images/error.png">
+            <img src="/images/icons/icon-error.png">
             <p class="form-contact__wrapper-error">Введіть мінімум 3 символи</p>
           </span>
         </div>
@@ -28,13 +28,12 @@
           <div class="form-contect__box-input">
             <label for="phone" class="form-contact__wrapper-label">Телефон
             </label>
-            <input type="phone" class="form-contact__wrapper-input" id="phone" maxlength="13"
-              pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}" placeholder="+38 (000) _ _ _-_ _-_ _">
-            <img src="/images/error-cross.png" alt="error" class="form-contact__wrapper-accept">
-            <img src="/images/success.png" alt="success" class="form-contact__wrapper-accept">
+            <input type="tel" class="form-contact__wrapper-input" id="phone" placeholder="+38 (000) _ _ _-_ _-_ _">
+            <img src="/images/icons/icon-error-cross.png" alt="error" class="form-contact__wrapper-accept">
+            <img src="/images/icons/icon-success.png" alt="success" class="form-contact__wrapper-accept">
           </div>
           <span class="form-contact__wrapper-content">
-            <img src="/images/error.png">
+            <img src="/images/icons/icon-error.png">
             <p class="form-contact__wrapper-error">Введіть мінімум 3 символи</p>
           </span>
         </div>
@@ -43,17 +42,17 @@
             <label for="email" class="form-contact__wrapper-label">Email *
             </label>
             <input type="email" class="form-contact__wrapper-input" id="email">
-            <img src="/images/error-cross.png" alt="error" class="form-contact__wrapper-accept">
-            <img src="/images/success.png" alt="success" class="form-contact__wrapper-accept">
+            <img src="/images/icons/icon-error-cross.png" alt="error" class="form-contact__wrapper-accept">
+            <img src="/images/icons/icon-success.png" alt="success" class="form-contact__wrapper-accept">
           </div>
           <span class="form-contact__wrapper-content">
-            <img src="/images/error.png">
-            <p class="form-contact__wrapper-error">Введіть мінімум 3 символи</p>
+            <img src="/images/icons/icon-error.png">
+            <p class="form-contact__wrapper-error">Ваша пошта неправильна. Приклад: user1@example.com</p>
           </span>
         </div>
 
         <div class="form-contact__wrapper">
-          <div class=" form-contact__select">
+          <div class="form-contact__select">
             <select>
               <option value="0">Оберіть пункт</option>
               <option value="1">Пунк 1</option>

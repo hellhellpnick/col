@@ -14,10 +14,18 @@
   width: 100%;
 }
 
+.form-contact__wrapper--error {
+  .form-contact__wrapper-content {
+    display: flex;
+    animation: show-card 0.5s linear;
+  }
+}
+
 .form-contect__box-input {
   position: relative;
   @include flex-constructor(flex-start, center, row);
   max-width: 444px;
+  max-height: 50px;
   width: 100%;
   padding: 15px 30px;
   border: 1px solid $border-main-color;
@@ -27,6 +35,7 @@
 }
 
 .form-contact__select {
+  max-height: 50px;
   position: relative;
   max-width: 444px;
   width: 100%;

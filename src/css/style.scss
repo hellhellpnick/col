@@ -11,6 +11,7 @@
 @import './components/sections/section-solution';
 @import './components/sections/section-we';
 @import './components/sections/section-form';
+@import './components/sections/section-contact';
 @import './components/sections/section-footer';
 
 // Components Common
@@ -18,5 +19,10 @@
 @import './components/common/main-nav';
 @import './components/common/card-slider';
 @import './components/common/card-solution';
+@import './components/common/card-info';
+@import './components/common/card-address';
 @import './components/common/form-contact';
 @import './components/common/footer-nav';
+@import './components/common/map-google';
+@import './components/common/info-nav';
+@import './components/common/modal-window';

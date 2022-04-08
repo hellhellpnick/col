@@ -16,9 +16,14 @@
   @include tablet-media {
     flex-direction: row;
   }
+
 }
 
 .section-footer__box-text {
   @include text-constructor($font-size-ultraSmall, $font-weigth-second, $text-light-color, $font-family-primary);
   line-height: 14.4px;
+
+  @include desktop-media {
+    font-size: $font-size-medium;
+  }
 }

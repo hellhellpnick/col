@@ -46,6 +46,10 @@
   height: 57%;
 
   @include desktop-media {
+    max-width: 40%;
+  }
+
+  @include desktop-large-media {
     right: -45%;
     padding: 20px 40px;
     height: 69%;
@@ -59,7 +63,7 @@
   line-height: 150%;
   text-align: center;
 
-  @include desktop-media {
+  @include desktop-large-media {
     font-size: $font-size-ultraBig;
   }
 }
@@ -78,7 +82,7 @@
     bottom: -27px;
   }
 
-  @include desktop-media {
+  @include desktop-large-media {
     line-height: 150px;
     font-size: 144px;
   }
@@ -102,9 +106,8 @@
     position: absolute;
     background-color: $background-dark-color;
     top: -15px;
-    right: -10px;
-    width: 100%;
-    max-width: 50%;
+    left: 50%;
+    width: 2000px;
     max-height: 550px;
     height: 60%;
     z-index: -1;
@@ -112,18 +115,16 @@
 
   @include iphone-plus-media {
     &::after {
-      right: -5%;
-      max-width: 50%;
+
+      height: 59%;
     }
   }
 
+
   @include desktop-media {
     &::after {
+      height: 74%;
       top: -36px;
-      width: 810px;
-      right: -86%;
-      max-width: 131%;
-      height: 80%;
     }
   }
 }
@@ -134,9 +135,30 @@
   width: 100%;
 
   &:nth-child(2n) {
-    .card-solution__wrapper-image:after {
-      left: -10px;
-      width: 100%;
+    .card-solution__wrapper-image {
+      &::after {
+        display: none;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        clear: both;
+        position: absolute;
+        background-color: $background-dark-color;
+        top: -15px;
+        right: 50%;
+        width: 2000px;
+        max-height: 550px;
+        height: 61%;
+        z-index: -1;
+      }
+
+      @include iphone-plus-media {
+        &::before {
+          height: 59%;
+        }
+      }
     }
 
     .card-solution__block {
@@ -156,17 +178,29 @@
 
       .card-solution__wrapper-image {
         &::after {
-          width: 810px;
-          left: -140%;
-          height: 80%;
+          display: none;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          clear: both;
+          position: absolute;
+          background-color: $background-dark-color;
+          top: -15px;
+          right: 50%;
+          width: 2000px;
+          max-height: 550px;
+          height: 78%;
+          z-index: -1;
         }
       }
 
       .card-solution__block {
-        left: -45%;
-        padding: 20px 40px;
+        padding: 22px 40px;
+        left: -100px;
         height: 75%;
-        max-width: 70%;
+        max-width: 50%;
       }
 
       .card-solution__wrapper-info {

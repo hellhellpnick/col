@@ -52,5 +52,9 @@
     "rollup-plugin-terser": "^5.2.0",
     "sass": "^1.49.11",
     "through2": "^3.0.1"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.13.11",
+    "inputmask": "^5.0.8-beta.17"
   }
 }

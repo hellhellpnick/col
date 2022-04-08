@@ -1,6 +1,7 @@
 .section-solution {
   @extend %section;
   background-color: $background-light-color;
+  overflow: hidden;
 
   @include desktop-media {
     padding: 120px 20px 150px 20px;
